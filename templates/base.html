@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={%static "index.css"%}>
+</head>
+<body>
+    <form action="" {% block method %} method='post'{% endblock method %}>
+        {% csrf_token %}
+        <h3>{% block heading %}Enter email for verification{% endblock heading%}</h3>
+        
+        {% block input %}<input type="text" name="uname" placeholder='username' id=""><br><br>
+        <input type="password" name="password" id="" placeholder='password'><br><br>
+        <input type="submit" value="send">
+        {% endblock input %}
+    </form>
+</body>
+</html>

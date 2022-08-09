@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block heading %}create yourself{% endblock heading %}
+
+{% block input %}
+<form action="" method="post"> 
+    {% csrf_token %} 
+    <input type="text" name="uname" placeholder='username' id=""><br><br>
+<input type="email" name="uemail" placeholder='email' id=""><br><br>
+<input type="password" name="password" placeholder='password' id=""><br><br>
+<input type="submit" value="submit">
+</form>
+{% endblock input %}
